@@ -1,0 +1,1 @@
+export { AppletG06SPC03S1GB01 as Applet } from './Applet'

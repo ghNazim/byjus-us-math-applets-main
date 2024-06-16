@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="139.32" height="69.66" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 139.32 69.66">
+  <defs>
+    <style>
+      .cls-1 {
+        filter: url(#drop-shadow-3);
+      }
+
+      .cls-2 {
+        fill: #f08f29;
+      }
+
+      .cls-3 {
+        fill: #f7d2a7;
+      }
+
+      .cls-4 {
+        fill: #cc7a22;
+      }
+    </style>
+    <filter id="drop-shadow-3" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="3"/>
+      <feGaussianBlur result="blur" stdDeviation="2"/>
+      <feFlood flood-color="#000" flood-opacity=".35"/>
+      <feComposite in2="blur" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g class="cls-1">
+    <polygon class="cls-3" points="131.91 27.08 31.18 46.4 7.82 24.53 105.86 4.1 131.91 27.08"/>
+    <polygon class="cls-2" points="131.91 39.26 31.18 57.71 31.18 46.4 131.91 27.08 131.91 39.26"/>
+    <polygon class="cls-4" points="31.18 57.71 7.82 36.15 7.82 24.53 31.18 46.4 31.18 57.71"/>
+  </g>
+</svg>

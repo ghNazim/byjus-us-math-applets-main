@@ -1,0 +1,1 @@
+export { FactorTree } from './FactorTree'

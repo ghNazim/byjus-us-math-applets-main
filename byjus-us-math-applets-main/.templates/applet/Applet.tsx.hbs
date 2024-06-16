@@ -1,0 +1,24 @@
+import { FC } from 'react'
+
+import { AppletContainer } from '@/common/AppletContainer'
+import { TextHeader } from '@/common/Header'
+import { AppletInteractionCallback } from '@/contexts/analytics'
+
+export const Applet{{name}}: FC<{
+  onEvent: AppletInteractionCallback
+  className?: string
+}> = ({ onEvent, className }) => {
+  return (
+    <AppletContainer
+      {...{
+        aspectRatio: 0.9,
+        borderColor: '#444',
+        id: '{{kebabCase name}}',
+        onEvent,
+        className,
+      }}
+    >
+      <TextHeader text="Hello World!" backgroundColor="#E7FBFF" buttonColor="#D1F7FF" />
+    </AppletContainer>
+  )
+}

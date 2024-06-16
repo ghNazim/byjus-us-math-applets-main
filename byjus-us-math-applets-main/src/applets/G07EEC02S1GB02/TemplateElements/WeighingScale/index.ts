@@ -1,0 +1,1 @@
+export { WeighingScale } from './WeighingScale'

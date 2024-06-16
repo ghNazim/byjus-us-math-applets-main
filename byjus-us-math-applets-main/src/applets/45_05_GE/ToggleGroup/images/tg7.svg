@@ -1,0 +1,23 @@
+<svg width="298" height="266" viewBox="0 0 298 266" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.5" y="0.5" width="297" height="264" fill="white" stroke="#EACCFF"/>
+<line opacity="0.4" x1="33.5" y1="265" x2="33.5" y2="-2.18557e-08" stroke="#EACCFF"/>
+<line opacity="0.4" x1="66.5" y1="265" x2="66.5" y2="2.24615e-08" stroke="#EACCFF"/>
+<line opacity="0.4" x1="99.5" y1="265" x2="99.5" y2="2.24615e-08" stroke="#EACCFF"/>
+<line opacity="0.4" x1="264.5" y1="266" x2="264.5" y2="2.26307e-08" stroke="#EACCFF"/>
+<line opacity="0.4" x1="132.5" y1="265" x2="132.5" y2="2.27394e-08" stroke="#EACCFF"/>
+<line opacity="0.4" x1="165.5" y1="265" x2="165.5" y2="2.27394e-08" stroke="#EACCFF"/>
+<line opacity="0.4" x1="198.5" y1="265" x2="198.5" y2="2.27394e-08" stroke="#EACCFF"/>
+<line opacity="0.4" x1="231.5" y1="265" x2="231.5" y2="2.27394e-08" stroke="#EACCFF"/>
+<line opacity="0.4" x1="298" y1="198.5" y2="198.5" stroke="#EACCFF"/>
+<line opacity="0.4" x1="298" y1="231.5" y2="231.5" stroke="#EACCFF"/>
+<line opacity="0.4" x1="298" y1="165.5" y2="165.5" stroke="#EACCFF"/>
+<line opacity="0.4" x1="298" y1="132.5" y2="132.5" stroke="#EACCFF"/>
+<line opacity="0.4" x1="298" y1="99.5" x2="1" y2="99.5" stroke="#EACCFF"/>
+<line opacity="0.4" x1="298" y1="66.5" x2="1" y2="66.5" stroke="#EACCFF"/>
+<line opacity="0.4" x1="298" y1="33.5" x2="1" y2="33.5" stroke="#EACCFF"/>
+<rect opacity="0.6" x="33.5" y="131.979" width="66.1379" height="66.0102" fill="#FAF2FF" stroke="#C882FA"/>
+<rect opacity="0.6" x="99.431" y="131.973" width="66.1379" height="66.0102" fill="#FFCCDB" stroke="#C882FA"/>
+<rect opacity="0.6" x="165.5" y="131.973" width="66.1379" height="66.0102" fill="#FAF2FF" stroke="#C882FA"/>
+<path opacity="0.6" d="M165.122 197.978L132.046 252.454L99.8759 197.978H165.122Z" fill="#FAF2FF" stroke="#C882FA"/>
+<path opacity="0.6" d="M165.122 131.927L132.046 77.4517L99.8759 131.927H165.122Z" fill="#FAF2FF" stroke="#C882FA"/>
+</svg>

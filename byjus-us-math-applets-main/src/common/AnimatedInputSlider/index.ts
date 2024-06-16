@@ -1,0 +1,1 @@
+export { AnimatedInputSlider } from './AnimatedInputSlider'

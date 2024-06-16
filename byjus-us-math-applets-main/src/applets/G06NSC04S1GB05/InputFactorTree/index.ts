@@ -1,0 +1,1 @@
+export { InputFactorTree } from './InputFactorTree'

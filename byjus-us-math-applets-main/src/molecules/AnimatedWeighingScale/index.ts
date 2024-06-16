@@ -1,0 +1,1 @@
+export { AnimatedWeighingScale } from './AnimatedWeighingScale'

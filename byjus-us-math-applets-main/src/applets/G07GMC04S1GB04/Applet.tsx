@@ -1,0 +1,240 @@
+import { Player } from '@lottiefiles/react-lottie-player'
+import { FC, useCallback, useContext, useEffect, useRef, useState } from 'react'
+import styled, { keyframes } from 'styled-components'
+
+// import useSound from 'use-sound'
+import { rotateBothSides } from '@/assets/onboarding'
+import { AppletContainer } from '@/common/AppletContainer'
+import { Geogebra } from '@/common/Geogebra'
+import { GeogebraAppApi } from '@/common/Geogebra/Geogebra.types'
+import { TextHeader } from '@/common/Header'
+import { AnalyticsContext, AppletInteractionCallback } from '@/contexts/analytics'
+import { useSFX } from '@/hooks/useSFX'
+
+import muteBtn from './assets/muteBtn.svg'
+import unmuteBtn from './assets/unmuteBtn.svg'
+// import observe from './assets/observe.mp3'
+// import supplementary from './assets/supplementary.mp3'
+const GGB = styled(Geogebra)`
+  position: absolute;
+  top: 0px;
+  scale: 0.66;
+  left: 50%;
+  translate: -50% -6%;
+`
+const OuterContainer = styled.div<{ top: number; direction: string }>`
+  position: absolute;
+  width: 100%;
+  height: 61px;
+  top: ${(p) => p.top}px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: ${(p) => p.direction};
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 10px;
+`
+const TextContainer = styled.div`
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: #444444;
+`
+const SpeakerDiv = styled.div`
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+`
+const SpeakerButton = styled.img`
+  cursor: pointer;
+  z-index: 1;
+`
+const HandPointer = styled(Player)`
+  position: absolute;
+  left: 164px;
+  top: 185px;
+  pointer-events: none;
+`
+const RippleContainer = styled.div`
+  position: absolute;
+  width: 50px;
+  height: 50px;
+`
+const ripple = keyframes`
+  0% {
+    opacity: 1;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+`
+const Ripple = styled.span`
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+  border-radius: 50px;
+  animation: ${ripple} 1s infinite;
+  background-color: #000000;
+  :nth-child(2) {
+    animation-delay: 0.5s;
+  }
+`
+const ColoredSpan = styled.span<{ bgColor: string; color: string }>`
+  padding: 0 3px;
+  background: ${(p) => p.bgColor};
+  color: ${(p) => p.color};
+  border-radius: 5px;
+  margin: 0 5px;
+`
+export const AppletG07GMC04S1GB04: FC<{
+  onEvent: AppletInteractionCallback
+  className?: string
+}> = ({ onEvent, className }) => {
+  const ggbApi = useRef<GeogebraAppApi | null>(null)
+  const playDragStart = useSFX('mouseIn')
+  const playDragEnd = useSFX('mouseOut')
+  const interaction = useContext(AnalyticsContext)
+  const [showHandPointer, setShowHandPointer] = useState(false)
+  const [helper, setHelper] = useState(0)
+  const [angAOB, setAngAOB] = useState('')
+  const [angBOC, setAngBOC] = useState('')
+  const [isPlaying, setIsPlaying] = useState(false)
+  const [audioPlay, setAudioPlay] = useState(true)
+  const checkPlay = {
+    onplay: () => setIsPlaying(true),
+    onend: () => setIsPlaying(false),
+  }
+
+  // const [playObserve, stopObserve] = useSound(observe, checkPlay)
+  // const [playSupplementary, stopSupplementary] = useSound(supplementary, checkPlay)
+  const onGGBHandle = useCallback(
+    (api: GeogebraAppApi | null) => {
+      if (api === null) return
+      ggbApi.current = api
+      setHelper(1)
+      setShowHandPointer(true)
+      ggbApi.current.registerClientListener((event: any) => {
+        if (ggbApi.current === null) return
+        if (event[0] == 'mouseDown' && event.hits[0] == "B''") {
+          playDragStart()
+          interaction('drag')
+          setShowHandPointer(false)
+        }
+        if (event[0] == 'dragEnd' && event[1] == "B''") {
+          playDragEnd()
+          interaction('drop')
+          setHelper(2)
+          setAngAOB(ggbApi.current.getValueString('TextYelo'))
+          setAngBOC(ggbApi.current.getValueString('TextBlueIn'))
+        }
+      })
+    },
+    [ggbApi],
+  )
+  useEffect(() => {
+    // stopObserve.stop()
+    // stopSupplementary.stop()
+    // if (audioPlay) {
+    //   switch (helper) {
+    //     case 1:
+    //       playObserve()
+    //       break
+    //     case 2:
+    //       playSupplementary()
+    //       break
+    //   }
+    // }
+  }, [helper, audioPlay])
+  return (
+    <AppletContainer
+      {...{
+        aspectRatio: 0.9,
+        borderColor: '#F6F6F6',
+        id: 'g07-gmc04-s1-gb04',
+        onEvent,
+        className,
+      }}
+    >
+      <TextHeader
+        text="Explore supplementary angles."
+        backgroundColor="#F6F6F6"
+        buttonColor="#1A1A1A"
+      />
+      <GGB materialId="hsbshbzr" onApiReady={onGGBHandle} />
+      {showHandPointer && <HandPointer autoplay loop src={rotateBothSides} />}
+      {helper == 2 && (
+        <OuterContainer top={670} direction={'column'}>
+          <TextContainer>
+            <ColoredSpan bgColor={'none'} color={'#CF8B04'}>
+              {'m \u2220AOB'}
+            </ColoredSpan>
+            {'+'}
+            <ColoredSpan bgColor={'none'} color={'#1CB9D9'}>
+              {'m \u2220BOC'}
+            </ColoredSpan>
+            {'='}
+            <ColoredSpan bgColor={'#D9CDFF'} color={'#6549C2'}>
+              {'180\u00B0'}
+            </ColoredSpan>
+          </TextContainer>
+          <TextContainer>
+            <ColoredSpan bgColor={'none'} color={'#CF8B04'}>
+              {angAOB}
+            </ColoredSpan>
+            {'+'}
+            <ColoredSpan bgColor={'none'} color={'#1CB9D9'}>
+              {angBOC}
+            </ColoredSpan>
+            {'='}
+            <ColoredSpan bgColor={'#D9CDFF'} color={'#6549C2'}>
+              {'180\u00B0'}
+            </ColoredSpan>
+          </TextContainer>
+        </OuterContainer>
+      )}
+      {helper > 0 && (
+        <OuterContainer top={helper == 1 ? 680 : 730} direction={'row'}>
+          {/* <SpeakerDiv>
+            {isPlaying && (
+              <RippleContainer>
+                <Ripple />
+                <Ripple />
+              </RippleContainer>
+            )}
+            <SpeakerButton
+              src={audioPlay ? muteBtn : unmuteBtn}
+              onClick={() => {
+                setAudioPlay((d) => !d)
+              }}
+            />
+          </SpeakerDiv> */}
+          {helper == 1 && (
+            <TextContainer>{'Observe the relation between \u2220AOB and \u2220BOC'}</TextContainer>
+          )}
+          {helper == 2 && (
+            <TextContainer>
+              {'Two angles are  '}
+              <ColoredSpan bgColor={'#D9CDFF'} color={'#6549C2'}>
+                supplementary
+              </ColoredSpan>
+              {' if their measures add up to 180\u00B0.'}
+            </TextContainer>
+          )}
+        </OuterContainer>
+      )}
+    </AppletContainer>
+  )
+}

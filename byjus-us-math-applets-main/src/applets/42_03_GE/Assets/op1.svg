@@ -1,0 +1,33 @@
+<svg width="105" height="119" viewBox="0 0 105 119" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M59 56L101 82" stroke="#888888" stroke-dasharray="2 2"/>
+<path d="M23 104L82 69" stroke="#888888" stroke-dasharray="2 2"/>
+<line x1="58.5" y1="1" x2="58.5" y2="56" stroke="#888888" stroke-dasharray="2 2"/>
+<path d="M1 90L59 56" stroke="#888888" stroke-dasharray="2 2"/>
+<g opacity="0.5">
+<path d="M58.4582 1L81.1179 14.1388L81.0001 69.5L58.2678 55.2689L58.4582 1Z" fill="#EACCFF"/>
+<path opacity="0.8" d="M0.380859 89.544V35.0847L58.4581 1V55.6498L0.380859 89.544Z" fill="#EACCFF"/>
+<path opacity="0.9" d="M0 90L45.5 117L101 82.5L59 55.5L0 90Z" fill="#FF9BB8"/>
+<path opacity="0.6" d="M23.231 76.9998V47.4998L81.3082 14.5878V43.4998L23.231 76.9998Z" fill="#EACCFF"/>
+<path opacity="0.6" d="M0.190417 35.6558L22.8501 48.7946V103.444L0 89.9247L0.190417 35.6558Z" fill="#EACCFF"/>
+<path opacity="0.6" d="M81.5 43.5L103.5 55.8484L101 82.5L81.5 70V43.5Z" fill="#C882FA"/>
+<path opacity="0.6" d="M45 118V90.5L103.5 56L101 82.5L45 118Z" fill="#F4E5FF"/>
+<path opacity="0.6" d="M22.5 77.5L45 90.5V117L22.1917 103L22.5 77.5Z" fill="#EACCFF"/>
+<path opacity="0.6" d="M23 77L45 90.5L103.5 56L81 43L23 77Z" fill="#EACCFF"/>
+</g>
+<line x1="0.5" y1="35" x2="0.5" y2="90" stroke="#888888"/>
+<line x1="22.5" y1="48" x2="22.5" y2="103" stroke="#888888"/>
+<path d="M22.5 48L81.5 14" stroke="#888888"/>
+<path d="M22.5 77L45 90" stroke="#888888"/>
+<path d="M0.5 35L23 48" stroke="#888888"/>
+<path d="M0.5 90L46 118" stroke="#888888"/>
+<path d="M81.5 43L104 56" stroke="#888888"/>
+<path d="M58.5 1L81 14" stroke="#888888"/>
+<path d="M45.5 118L101.5 82.5" stroke="#888888"/>
+<path d="M46 90L104 56" stroke="#888888"/>
+<path d="M1 35L59 1" stroke="#888888"/>
+<path d="M23 77L82 43" stroke="#888888"/>
+<path d="M81.5 14V43.5" stroke="#888888"/>
+<path d="M81.5 43V70.5" stroke="#888888" stroke-dasharray="2 2"/>
+<path d="M103.5 56L101 82.5" stroke="#888888"/>
+<line x1="45.5" y1="90" x2="45.5" y2="118" stroke="#888888"/>
+</svg>

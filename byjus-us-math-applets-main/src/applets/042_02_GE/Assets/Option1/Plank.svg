@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="720" height="720" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 720 720">
+  <defs>
+    <style>
+      .cls-1 {
+        filter: url(#drop-shadow-7);
+      }
+
+      .cls-2 {
+        fill: #f6f6f6;
+      }
+
+      .cls-3 {
+        filter: url(#drop-shadow-4);
+      }
+
+      .cls-4 {
+        filter: url(#drop-shadow-3);
+      }
+
+      .cls-5 {
+        filter: url(#drop-shadow-1);
+      }
+
+      .cls-6 {
+        filter: url(#drop-shadow-6);
+      }
+
+      .cls-7 {
+        filter: url(#drop-shadow-5);
+      }
+
+      .cls-8 {
+        filter: url(#drop-shadow-2);
+      }
+    </style>
+    <filter id="drop-shadow-1" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="3"/>
+      <feGaussianBlur result="blur" stdDeviation="2"/>
+      <feFlood flood-color="#231f20" flood-opacity=".35"/>
+      <feComposite in2="blur" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="drop-shadow-2" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="3"/>
+      <feGaussianBlur result="blur-2" stdDeviation="2"/>
+      <feFlood flood-color="#231f20" flood-opacity=".35"/>
+      <feComposite in2="blur-2" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="drop-shadow-3" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="3"/>
+      <feGaussianBlur result="blur-3" stdDeviation="2"/>
+      <feFlood flood-color="#231f20" flood-opacity=".35"/>
+      <feComposite in2="blur-3" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="drop-shadow-4" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="3"/>
+      <feGaussianBlur result="blur-4" stdDeviation="2"/>
+      <feFlood flood-color="#231f20" flood-opacity=".35"/>
+      <feComposite in2="blur-4" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="drop-shadow-5" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="3"/>
+      <feGaussianBlur result="blur-5" stdDeviation="2"/>
+      <feFlood flood-color="#231f20" flood-opacity=".35"/>
+      <feComposite in2="blur-5" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="drop-shadow-6" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="3"/>
+      <feGaussianBlur result="blur-6" stdDeviation="2"/>
+      <feFlood flood-color="#231f20" flood-opacity=".35"/>
+      <feComposite in2="blur-6" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="drop-shadow-7" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="3"/>
+      <feGaussianBlur result="blur-7" stdDeviation="2"/>
+      <feFlood flood-color="#231f20" flood-opacity=".35"/>
+      <feComposite in2="blur-7" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g class="cls-5">
+    <polygon class="cls-2" points="445.36 227.19 445.36 270.3 476.29 282.38 476.29 230.57 445.36 227.19"/>
+    <polygon class="cls-2" points="485.94 226.64 476.29 230.57 445.36 227.19 461.71 225.03 485.94 226.64"/>
+    <polygon class="cls-2" points="485.94 275.86 476.29 282.38 476.29 230.57 485.94 226.64 485.94 275.86"/>
+  </g>
+  <g class="cls-8">
+    <polygon class="cls-2" points="369.76 248.93 398.07 263.33 487.99 220.35 459.39 206.31 369.76 248.93"/>
+    <polygon class="cls-2" points="398.08 272.93 398.07 263.33 369.76 248.87 369.76 258.82 398.08 272.93"/>
+    <polygon class="cls-2" points="487.99 229.77 398.08 272.93 398.07 263.33 487.99 220.35 487.99 229.77"/>
+  </g>
+  <g class="cls-4">
+    <polygon class="cls-2" points="346.17 199.74 374.56 182.97 401.36 197.76 374.72 212.08 346.17 199.74"/>
+    <polygon class="cls-2" points="374.97 339.99 374.72 212.08 346.17 199.74 346.17 329.06 374.97 339.99"/>
+    <polygon class="cls-2" points="401.23 323.25 401.36 197.76 374.72 212.08 374.97 339.99 401.23 323.25"/>
+  </g>
+  <g class="cls-3">
+    <polygon class="cls-2" points="256.11 265.05 284.64 280.04 373.76 235.37 345.13 220.38 256.11 265.05"/>
+    <polygon class="cls-2" points="284.74 283.58 284.64 280.04 256.11 265.05 256.11 269 284.74 283.58"/>
+    <polygon class="cls-2" points="373.76 238.91 284.74 283.58 284.64 280.04 373.76 235.37 373.76 238.91"/>
+  </g>
+  <g class="cls-7">
+    <polygon class="cls-2" points="256.11 307.71 284.64 322.7 373.76 278.03 345.13 263.04 256.11 307.71"/>
+    <polygon class="cls-2" points="284.74 326.24 284.64 322.7 256.11 307.71 256.11 311.66 284.74 326.24"/>
+    <polygon class="cls-2" points="373.76 281.57 284.74 326.24 284.64 322.7 373.76 278.03 373.76 281.57"/>
+  </g>
+  <g class="cls-6">
+    <polygon class="cls-2" points="256.11 351.45 284.64 366.44 373.76 321.78 345.13 306.78 256.11 351.45"/>
+    <polygon class="cls-2" points="284.74 369.98 284.64 366.44 256.11 351.45 256.11 355.41 284.74 369.98"/>
+    <polygon class="cls-2" points="373.76 325.32 284.74 369.98 284.64 366.44 373.76 321.78 373.76 325.32"/>
+  </g>
+  <g class="cls-1">
+    <polygon class="cls-2" points="232.01 258.84 260.39 242.07 287.19 256.86 260.56 271.18 232.01 258.84"/>
+    <polygon class="cls-2" points="260.81 399.09 260.56 271.18 232.01 258.84 232.01 388.16 260.81 399.09"/>
+    <polygon class="cls-2" points="287.06 382.35 287.19 256.86 260.56 271.18 260.81 399.09 287.06 382.35"/>
+  </g>
+</svg>

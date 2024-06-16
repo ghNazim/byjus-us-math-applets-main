@@ -1,0 +1,30 @@
+{
+  "src": [
+    "sfxSprite.ogg",
+    "sfxSprite.m4a",
+    "sfxSprite.mp3",
+    "sfxSprite.ac3"
+  ],
+  "sprite": {
+    "correct": [
+      0,
+      1482.5396825396826
+    ],
+    "mouseClick": [
+      3000,
+      235.10204081632668
+    ],
+    "incorrect": [
+      5000,
+      1108.7528344671202
+    ],
+    "mouseIn": [
+      8000,
+      242.51700680272137
+    ],
+    "mouseOut": [
+      10000,
+      242.51700680272137
+    ]
+  }
+}

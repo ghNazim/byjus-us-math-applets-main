@@ -1,0 +1,96 @@
+name: CDN Deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      build-all:
+        description: 'Build all applets'
+        required: false
+        default: 'false'
+  push:
+    branches:
+      - main
+
+jobs:
+  changed-files:
+    name: Get Changed Applets
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Get Changed Files
+        id: changed-files
+        uses: tj-actions/changed-files@v39
+        with:
+          files: 'src/applets/**'
+          json: true
+          quotepath: false
+          dir_names: true
+          dir_names_max_depth: 3
+      - name: List all changed files
+        run: echo '${{ steps.changed-files.outputs.all_changed_files }}'
+      - id: set-matrix
+        run: echo "matrix={\"files\":${{ steps.changed-files.outputs.all_changed_files }}}" >> "$GITHUB_OUTPUT"
+
+  matrix-job:
+    name: Run Matrix Job
+    runs-on: ubuntu-latest
+    # These permissions are needed to interact with GitHub's OIDC Token endpoint.
+    permissions:
+      id-token: write
+      contents: read
+    needs: [changed-files]
+    strategy:
+      matrix: ${{ fromJSON(needs.changed-files.outputs.matrix) }}
+      max-parallel: 4
+      fail-fast: false
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+      - name: Install Dependencies
+        run: npm ci
+      - name: Build
+        run: |
+          echo "Building ${{ matrix.files }}"
+          npm run build ${{ matrix.files }}
+      - name: Upload file to bucket
+        run: aws s3 cp ./dist/ s3://whjr-prod-cocos-applet/SEO/ReactAppletDev/CDN --recursive --cache-control max-age=30
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: 'ap-south-1'
+
+  all-job:
+    if: github.event.inputs.build-all == 'true'
+    name: Run All Job
+    runs-on: ubuntu-latest
+    # These permissions are needed to interact with GitHub's OIDC Token endpoint.
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install Dependencies
+        run: npm ci
+      - name: Build
+        run: |
+          echo "Building all"
+          npm run build
+      - name: Upload file to bucket
+        run: aws s3 cp ./dist/ s3://whjr-prod-cocos-applet/SEO/ReactAppletDev/CDN --recursive --cache-control max-age=30
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: 'ap-south-1'
